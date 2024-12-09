@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Password Validation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color:green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color:lightsalmon;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #007bff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+   
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Password Validation</h2>
+        
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" placeholder="Enter password" />
+        <button onclick="validatePassword()">Submit</button>
+        
+       
+       
+      </div>
+    
+
+<script>
+     function validatePassword() {
+      const password = document.getElementById("password").value;
+      
+      // Password validation conditions
+      const minLength = /.{8,}/;  // At least 8 characters
+      const hasNumber = /[0-9]/;  // At least one number
+      const hasLowerCase = /[a-z]/;  // At least one lowercase letter
+      const hasUpperCase = /[A-Z]/;  // At least one uppercase letter
+
+      // Check if password meets all conditions
+      if (!minLength.test(password)) {
+        alert("Password must be at least 8 characters long.");
+        return;
+      }
+      if (!hasNumber.test(password)) {
+        alert("Password must contain at least one number.");
+        return;
+      }
+      if (!hasLowerCase.test(password)) {
+        alert("Password must contain at least one lowercase letter.");
+        return;
+      }
+      if (!hasUpperCase.test(password)) {
+        alert("Password must contain at least one uppercase letter.");
+        return;
+      }
+
+      // If password is valid
+      alert("Password is valid!");
+    }
+     
+  </script>
+
+</body>
+</html>
+        
+</script>
